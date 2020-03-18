@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.main')
+@section('contenido')
 	<div class="container"><br>
 		<div class="row">
 			<div class="col-md-12">
@@ -14,7 +9,8 @@
 						
 					</div>
 					<div class="card-body">
-						<form action="" method="POST">
+						<form action="{{ route('products.update', $product->id)}}" method="POST">
+							@method('put')
 							@csrf
 							<div class="form-group">
 								<label for="">Descripción</label>
@@ -32,5 +28,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+@endsection

@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.main')
+@section('contenido')
 	<div class="container"><br>
 		<div class="row">
 			<div class="col-md-12">
@@ -47,9 +42,16 @@
 							</tbody>
 						</table>
 					</div>
+					<div class="card-footer">
+						Bienvenido {{ auth()->user()->name }}
+						<a href="javascript: document.getElementById('logout').submit()" class="btn btn-danger btn-sm float-right">Cerrar sesión</a>
+						<form action="{{ route('logout') }}" id="logout" style="display:none" method="POST">
+							@csrf
+							
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+@endsection		
