@@ -12,7 +12,8 @@
   </head>
   <body><br>
    <div class="container">
-     <a href="{{route('unos')}}" class="btn btn-primary">Uno</a>
+     <a href="{{route('indice')}}" class="btn btn-primary">Inicio</a>
+     <a href="{{route('uno')}}" class="btn btn-primary">Uno</a>
      <a href="{{route('foto')}}" class="btn btn-primary">Fotos</a>
      <a href="{{route('nosotros')}}" class="btn btn-primary">Nosotros</a>
    </div>

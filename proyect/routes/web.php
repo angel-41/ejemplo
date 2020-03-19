@@ -50,6 +50,27 @@ Route::put('products/{id}', function(Request $request, $id){
 });
 
 
+Route::get('lista','PagesController@lista');
+
+Route::get('/','PagesController@index')->name('indice');
+
+Route::get('/detalle/{id}','PagesController@detalle')->name('notas.detalle');
+
+Route::post('nota/crear', 'PagesController@crear')->name('notas.crear');
+
+Route::get('editar/{id}','PagesController@editar')->name('notas.editar');
+
+Route::put('editar/{id}', 'PagesController@update')->name('notas.update');
+
+Route::get('uno','PagesController@inicio')->name('uno');
+
+Route::get('fotos','PagesController@fotos')->name('foto');
+
+Route::get('nosotros/{nombre?}','PagesController@nosotros')->name('nosotros');
+
+
+
+
 
 Auth::routes();
 
