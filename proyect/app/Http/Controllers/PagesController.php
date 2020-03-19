@@ -67,5 +67,7 @@ class PagesController extends Controller
             $notaUpdate->descripcion = $request->descripcion;
 
             $notaUpdate->save();
+
+            return back()->with('mensaje','Nota Actualizada');
     }
 }

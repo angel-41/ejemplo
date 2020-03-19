@@ -1,6 +1,14 @@
 @extends('plantilla')
 @section('seccion')
 	<h1>Editar Nota: {{ $nota->id }}</h1>
+
+	@if(session('mensaje'))
+        <div class="alert alert-success">
+        	<button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{session('mensaje')}}
+        </div>
+    @endif
+
 	<form action=" {{ route('notas.update', $nota->id) }} " method="POST">
 		@method('PUT')
         @csrf <!-- token de seguridad, evita que el sitio web colapse -->
